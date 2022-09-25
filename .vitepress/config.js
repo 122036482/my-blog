@@ -16,9 +16,18 @@ const nav = [
       { text: "javascript悟道", link: "/item-3" },
     ],
   },
-  { text: "面试", link: "" },
+  { text: "面试", link: "/interview/" },
 ];
 
+const sidebar = [
+  {
+    text: "面试",
+    items: [
+      { text: "面试", link: "/introduction" },
+      { text: "Getting Started", link: "/getting-started" },
+    ],
+  },
+];
 export default {
   // themeConfig: {
   //   siteTitle: "MJX_Blog",
@@ -31,5 +40,6 @@ export default {
   },
   themeConfig: {
     nav,
+    sidebar,
   },
 };
