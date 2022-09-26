@@ -1,3 +1,4 @@
+// 导航栏
 const nav = [
   {
     text: "工作",
@@ -18,20 +19,19 @@ const nav = [
   },
   { text: "面试", link: "/interview/" },
 ];
-
-const sidebar = [
-  {
-    text: "面试",
-    items: [
-      { text: "面试", link: "/introduction" },
-      { text: "Getting Started", link: "/getting-started" },
-    ],
-  },
-];
+// 侧边栏
+const sidebar = {
+  "/interview/": [
+    {
+      text: "面试问题",
+      items: [
+        { text: "常用的工具函数", link: "/interview/function" },
+        { text: "数组相关问题", link: "/interview/array" },
+      ],
+    },
+  ],
+};
 export default {
-  // themeConfig: {
-  //   siteTitle: "MJX_Blog",
-  // },
   title: "MJX的博客",
   description: "记录生活，工作，与学习",
   srcDir: "src",
