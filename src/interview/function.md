@@ -32,8 +32,8 @@ const obj = {
   ....
 }
 // 来一个判断类型的函数
-function typeOf(value) {
-  return Object.prototype.toString.call(value).split(" ")[1].slice(0, -1);
+function typeOf(target) {
+  return Object.prototype.toString.call(target).split(" ")[1].slice(0, -1);
 }
 // 实现如下
 function deepClone(target, hash = new WeakMap()) {
