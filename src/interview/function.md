@@ -37,42 +37,20 @@ function typeOf(target) {
 }
 // 实现如下
 function deepClone(target, hash = new WeakMap()) {
-  const targetType = typeOf(target);
-  switch (targetType) {
-    case "Object":
-      {
-        if (hash.has(target)) return hash.get(target);
-        const cloneTarget = {};
-        hash.set(target, cloneTarget);
-        Reflect.ownKeys(target).forEach((key) => {
-          cloneTarget[key] = deepClone(target[key], hash);
-        });
-        return cloneTarget;
-      }
-      break;
-    case "Date":
-      {
-        return new Date(target);
-      }
-      break;
-    case "RegExp":
-      {
-        return new RegExp(target);
-      }
-      break;
-    case "HTMLElement":
-      {
-        return new Date(target);
-      }
-      break;
-    default:
-      {
-        return target;
-      }
-      break;
-  }
+   const targetType = typeOf(target);
+   if (targetType === "null") return target;
+   if (targetType === "Date") return new Date(target);
+   if (targetType === "RegExp") return new RegExp(target);
+   if (targetType === "HTMLElement") return target;
+   if (targetType === "Object") return target;
+   if (hash.has(target)) return hash.get(target);
+   const cloneTarget = {};
+   hash.set(target, cloneTarget);
+   Reflect.ownKeys(target).forEach((key) => {
+      cloneTarget[key] = deepClone(target[key], hash);
+   });
+   return cloneTarget;
 }
-
 ```
 ## 防抖函数
 ``` js
@@ -98,4 +76,19 @@ function throttle(fn,delay = 200) {
       },delay);
    }
 }
+```
+## 判断一个变量是不是数组
+``` js
+let variable = []
+// 1 es6
+Array.isArray(variable)  // true
+
+// instanceof 
+(variable instanceof Array) // true
+
+// Object.prototype.toString.call(variable)
+function isArray(variable) {
+   return Object.prototype.toString.call(variable).split(' ')[1].slice(0,-1) === "Array"
+}
+
 ```
