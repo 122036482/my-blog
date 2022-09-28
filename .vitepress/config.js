@@ -18,6 +18,7 @@ const nav = [
     ],
   },
   { text: "面试", link: "/interview/" },
+  { text: "学习", link: "/learn/" },
 ];
 // 侧边栏
 const sidebar = {
