@@ -19,6 +19,7 @@ const nav = [
   },
   { text: "面试", link: "/interview/" },
   { text: "学习", link: "/learn/" },
+  { text: "TypeScript", link: "/typesctipt/" },
 ];
 // 侧边栏
 const sidebar = {
