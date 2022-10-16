@@ -26,3 +26,21 @@
         console.log(array[i]); // 1,2,3
   }
 ```
+### 实现一个 arr.map 
+```js
+/**
+ * @param  {Array}  arr 传递的数组
+ * @param  {Callback}  cb 一个回调函数
+ * @return {Array} 返回一个新的数组
+*/
+function myMap(arr, cb) {
+    let res = [];
+    for (let i = 0; i < arr.length; i++) {
+      res.push(cb(arr[i], i));
+    }
+    return res;
+  }
+  let arr = [1, 2, 3];
+  let arr1 = myMap(arr, (item, index) => item * 2);
+  console.log(arr1);// 2 4 6
+```
