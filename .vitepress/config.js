@@ -11,10 +11,10 @@ const nav = [
   {
     text: "书籍",
     items: [
-      { text: "javascript忍者秘籍", link: "/item-1" },
-      { text: "javassript数据结构与算法", link: "/item-2" },
-      { text: "javascript高级程序设计", link: "/item-3" },
-      { text: "javascript悟道", link: "/item-3" },
+      { text: "javascript忍者秘籍", link: "/books/" },
+      { text: "javassript数据结构与算法", link: "/books/" },
+      { text: "javascript高级程序设计", link: "/books/" },
+      { text: "javascript悟道", link: "/books/" },
     ],
   },
   { text: "面试", link: "/interview/" },
