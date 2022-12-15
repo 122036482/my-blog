@@ -11,7 +11,7 @@ const nav = [
   {
     text: "书籍",
     items: [
-      { text: "javascript忍者秘籍", link: "/books/" },
+      { text: "javascript忍者秘籍", link: "/books/jsninja/" },
       { text: "javassript数据结构与算法", link: "/books/" },
       { text: "javascript高级程序设计", link: "/books/" },
       { text: "javascript悟道", link: "/books/" },
@@ -25,7 +25,7 @@ const nav = [
 const sidebar = {
   "/interview/": [
     {
-      text: "面试问题",
+      text: "Interview Questions",
       items: [
         { text: "常用的工具函数", link: "/interview/function" },
         { text: "数组相关问题", link: "/interview/array" },

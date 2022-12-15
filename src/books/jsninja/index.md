@@ -1,5 +1,5 @@
 ---
-   title: javassript books
+   title: javassript忍者秘籍
 ---
 
 # {{ $frontmatter.title }}
