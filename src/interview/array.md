@@ -44,3 +44,24 @@ function myMap(arr, cb) {
   let arr1 = myMap(arr, (item, index) => item * 2);
   console.log(arr1);// 2 4 6
 ```
+### 判断一个变量是否是数组
+>思路一 根据类型判断
+``` js
+  /**
+  *1. type of 返回的是 基本类型和引用类型  引用类型是 object 数组也属于 * * object 也无法判断是否为一个数组。
+  * 2. 使用 instanceof 可以检测实例对象 数组的prototype是Array
+  * 3. 数组自带的检测方法 isArray 用于确定传递的值是否是一个 Array。
+  * 4. 通过Object的toString 方法可以 返回一个表示该对象的字符串
+  */
+
+  let arr  = []
+  // 方法 1
+  console.log(typeof arr) // object
+  // 方法 2
+  console.log(arr instanceof Array) // true
+  // 方法 3
+  console.log(Array.isArray(arr)) // true
+  // 4
+  console.log(Object.prototype.toString.call(arr)); // "[object Array]"
+
+```
