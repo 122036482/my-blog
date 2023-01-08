@@ -2,11 +2,7 @@
 const nav = [
   {
     text: "工作",
-    items: [
-      { text: "Item A", link: "/item-1" },
-      { text: "Item B", link: "/item-2" },
-      { text: "Item C", link: "/item-3" },
-    ],
+    link: "/work/",
   },
   {
     text: "书籍",
@@ -18,8 +14,8 @@ const nav = [
     ],
   },
   { text: "面试", link: "/interview/" },
-  { text: "学习", link: "/learn/" },
-  { text: "TypeScript", link: "/typesctipt/" },
+  { text: "学习", items: [{ text: "rollup", link: "/learn/rollup/" }] },
+  { text: "TypeScript", link: "/typescript/" },
 ];
 // 侧边栏
 const sidebar = {
