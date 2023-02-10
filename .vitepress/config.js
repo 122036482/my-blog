@@ -14,7 +14,13 @@ const nav = [
     ],
   },
   { text: "面试", link: "/interview/" },
-  { text: "学习", items: [{ text: "rollup", link: "/learn/rollup/" }] },
+  {
+    text: "学习",
+    items: [
+      { text: "rollup", link: "/learn/rollup/" },
+      { text: "pnpm", link: "/learn/pnpm/" },
+    ],
+  },
   { text: "TypeScript", link: "/typescript/" },
 ];
 // 侧边栏
