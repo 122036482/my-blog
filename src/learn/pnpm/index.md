@@ -25,3 +25,16 @@
   // 局部安装
    npm  install pnpm D
 ```
+> 更多安装方式参看[官网](https://pnpm.io/installation)
+## 常用命令
+| npm command        |      pnpm equivalent      |
+| -------------      | :-----------:             |
+| npm inatall        | pnpm install              |
+| npm i \<pkg\>        |   pnpm add \<pkg\>          |
+| npm run \<cmd\>      |   pnpm \<cmd\>              |
+
+## 过滤
+> 在monorepo常用这个命令 [更多](https://pnpm.io/filtering)
+```bash
+pnpm --filter <package_selector> <cmd>
+```
