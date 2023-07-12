@@ -29,7 +29,7 @@
 ## 常用命令
 | npm command        |      pnpm equivalent      |
 | -------------      | :-----------:             |
-| npm inatall        | pnpm install              |
+| npm install        | pnpm install              |
 | npm i \<pkg\>        |   pnpm add \<pkg\>          |
 | npm run \<cmd\>      |   pnpm \<cmd\>              |
 
