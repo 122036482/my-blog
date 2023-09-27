@@ -1,1 +1,4 @@
-# keep coding.......
+---
+layout: home
+
+---
