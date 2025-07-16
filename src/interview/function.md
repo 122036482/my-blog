@@ -92,3 +92,100 @@ function isArray(variable) {
 }
 
 ```
+## 实现一个Bind Function
+``` js
+Function.prototype.myBind = function(context, ...args) {
+   const fn = this;
+
+   //  支持new调用
+   function BoundFunction(...innerArgs) {
+      // 如果使用new调用
+      if (new.target) {
+         return new fn(...args, ...innerArgs);
+      }
+      // 否则使用apply调用
+      return fn.apply(context, [...args, ...innerArgs]);
+   }
+   // 绑定原型链
+   BoundFunction.prototype = Object.create(fn.prototype);
+   return BoundFunction; // 返回一个新的函数
+}
+
+```
+
+## 实现一个store
+``` js
+
+class Store {
+   constructor() {
+      this.state = {};
+      this.listeners = [];
+   }
+
+   setState(newState) {
+      this.state = { ...this.state, ...newState };
+      this.notify();
+   }
+
+   updateState(updater) {
+      if (typeof updater !== 'function') {
+         throw new Error('Updater must be a function');
+      }
+      const newState = updater(this.state);
+      this.setState(newState);
+   }
+
+   getState() {
+      return this.state;
+   }
+
+   subscribe(listener) {
+      this.listeners.push(listener);
+   }
+
+   unsubscribe(listener) {
+      this.listeners = this.listeners.filter(l => l !== listener);
+   }
+
+   notify() {
+      this.listeners.forEach(listener => listener(this.state));
+   }
+}
+```
+
+## 实现一个eventBus
+
+``` js
+class EventBus {
+   constructor() {
+      this.events = new Map();
+   }
+
+   on(event, listener) {
+      if (!this.events.has(event)) {
+         this.events.set(event, []);
+      }
+      this.events.get(event).push(listener);
+   }
+
+   off(event, listener) {
+      if (!this.events.has(event)) return;
+      this.events.get(event) = this.events.get(event).filter(l => l !== listener);
+   }
+   emit(event, ...args) {
+    if (!this.events.has(event)) return;
+      this.events.get(event).forEach(listener => listener(...args));
+   }
+   off(event,listener) {
+      if (!this.events.has(event)) return;
+      this.events.set(event, this.events.get(event).filter(l => l !== listener));
+   }
+}
+```
+
+## 实现一个Promise
+``` js
+class MyPromise {
+
+}
+```
