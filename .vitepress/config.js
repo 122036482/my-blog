@@ -22,6 +22,7 @@ const nav = [
     ],
   },
   { text: "TypeScript", link: "/typescript/" },
+  { text: "LLM", link: "/llm/" },
 ];
 // 侧边栏
 const sidebar = {
